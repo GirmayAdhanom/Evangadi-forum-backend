@@ -3,7 +3,14 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = 2112;
+// const PORT = 2112;
+
+
+const port = process.env.PORT || 2112;
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
 
 // Global middlewares
 app.use(cors());
